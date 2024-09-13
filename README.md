@@ -1,3 +1,3 @@
-# Super simple Black page, Double Click to Fullscreen
+# Super simple Black page, Double-click to Fullscreen
 
 Visible at [https://blackscreen.namelessnanashi.dev/](https://blackscreen.namelessnanashi.dev/)
