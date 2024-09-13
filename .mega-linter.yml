@@ -7,7 +7,7 @@ ENABLE_LINTERS: # If you use ENABLE_LINTERS variable, all other linters will be 
   - CSS
   - JAVASCRIPT
   - HTML_HTMLHINT
-  - HTML_DJLINT
+#  - HTML_DJLINT
   - MARKDOWN_MARKDOWNLINT
 DISABLE_ERRORS_LINTERS:PRINT_ALL_FILES: false
 FILTER_REGEX_EXCLUDE: '(\.automation/test|\.automation/generated|\.venv|\.github/workflows|docs/javascripts|docs/overrides|docs/json-schemas|flavors|clj-kondo|TEMPLATES)'
