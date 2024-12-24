@@ -1,39 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>BlackScreen Page</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  </head>
-  <body style="background-color: #000000">
-    <script>
-      function toggleFullScreen() {
-        const doc = window.document;
-        const docEl = doc.documentElement;
-        var requestFullScreen =
-          docEl.requestFullscreen ||
-          docEl.mozRequestFullScreen ||
-          docEl.webkitRequestFullScreen ||
-          docEl.msRequestFullscreen;
-        var cancelFullScreen =
-          doc.exitFullscreen ||
-          doc.mozCancelFullScreen ||
-          doc.webkitExitFullscreen ||
-          doc.msExitFullscreen;
-        if (
-          !doc.fullscreenElement &&
-          !doc.mozFullScreenElement &&
-          !doc.webkitFullscreenElement &&
-          !doc.msFullscreenElement
-        ) {
-          requestFullScreen.call(docEl);
-        } else {
-          cancelFullScreen.call(doc);
-        }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>BlackScreen Page</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      background-color: #000000;
+      cursor: default;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function toggleFullScreen() {
+      const doc = window.document;
+      const docEl = doc.documentElement;
+      const requestFullScreen =
+        docEl.requestFullscreen ||
+        docEl.mozRequestFullScreen ||
+        docEl.webkitRequestFullScreen ||
+        docEl.msRequestFullscreen;
+      const cancelFullScreen =
+        doc.exitFullscreen ||
+        doc.mozCancelFullScreen ||
+        doc.webkitExitFullscreen ||
+        doc.msExitFullscreen;
+
+      if (
+        !doc.fullscreenElement &&
+        !doc.mozFullScreenElement &&
+        !doc.webkitFullscreenElement &&
+        !doc.msFullscreenElement
+      ) {
+        requestFullScreen.call(docEl);
+      } else {
+        cancelFullScreen.call(doc);
       }
-      document.addEventListener("dblclick", () => {
-        toggleFullScreen();
-      });
-    </script>
-  </body>
+    }
+
+    document.addEventListener("dblclick", toggleFullScreen);
+
+    let hideMouseTimeout;
+
+    function hideMouse() {
+      document.body.style.cursor = "none";
+    }
+
+    function resetMouseTimer() {
+      document.body.style.cursor = "default";
+      clearTimeout(hideMouseTimeout);
+      hideMouseTimeout = setTimeout(hideMouse, 5000);
+    }
+
+    document.addEventListener("mousemove", resetMouseTimer);
+
+    resetMouseTimer();
+  </script>
+</body>
+
 </html>
