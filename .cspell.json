@@ -4,13 +4,31 @@
     "**/vscode-extension/**",
     "**/.git/**",
     "**/.pnpm-lock.json",
+    "**/node_modules/**",
+    "**/.rbenv/**",
+    "**/.venv/**",
+    "**/*cache*/**",
+    "**/.github/**",
+    "**/.idea/**",
+    "**/report/**",
+    "**/*.svg",
     ".vscode",
     "megalinter",
     "package-lock.json",
-    "report"
+    "report",
+    ".jscpd.json",
+    ".cspell.json",
+    ".gitignore",
+    ".mega-linter.yml",
+    "CNAME",
+    "megalinter-reports/**",
+    "flows/Lint.yml.disable"
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["megalinter", "oxsecurity"],
+  "words": [
+    "megalinter",
+    "oxsecurity"
+  ],
   "version": "0.2"
 }

@@ -1,15 +1,32 @@
 {
   "threshold": 0,
-  "reporters": ["html", "markdown"],
+  "reporters": [
+    "html",
+    "markdown"
+  ],
   "ignore": [
     "**/node_modules/**",
+    "**/vscode-extension/**",
     "**/.git/**",
+    "**/.pnpm-lock.json",
+    "**/node_modules/**",
     "**/.rbenv/**",
     "**/.venv/**",
     "**/*cache*/**",
     "**/.github/**",
     "**/.idea/**",
     "**/report/**",
-    "**/*.svg"
+    "**/*.svg",
+    ".vscode",
+    "megalinter",
+    "package-lock.json",
+    "report",
+    ".jscpd.json",
+    ".cspell.json",
+    ".gitignore",
+    ".mega-linter.yml",
+    "CNAME",
+    "megalinter-reports/**",
+    "flows/Lint.yml.disable"
   ]
 }
