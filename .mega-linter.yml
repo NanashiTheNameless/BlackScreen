@@ -19,7 +19,7 @@ DISABLE_LINTERS:
 
 DISABLE:
 #   - COPYPASTE # Comment to enable checks of excessive copy-pastes
-#   - SPELL # Uncomment to disable checks of spelling mistakes
+  - SPELL # Uncomment to disable checks of spelling mistakes
   - REPOSITORY
 
 SHOW_ELAPSED_TIME: true
